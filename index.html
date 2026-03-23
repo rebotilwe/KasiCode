@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KasiCode — Your Kasi Tech Plug | Websites, Apps & Digital Solutions in Langaville</title>
+
+<!-- ── SEO META TAGS ── -->
+<meta name="description" content="KasiCode builds affordable websites, mobile apps, CV designs and business systems for township entrepreneurs in Langaville, Ekurhuleni. Your Kasi Tech Plug.">
+<meta name="keywords" content="web development Langaville, website design Ekurhuleni, affordable websites kasi, mobile apps South Africa, CV design Tsakane, KasiCode">
+<meta name="author" content="KasiCode Solutions">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.kasicodesolutions.co.za/">
+
+<!-- ── OPEN GRAPH (WhatsApp / Facebook previews) ── -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="KasiCode — Your Kasi Tech Plug">
+<meta property="og:description" content="Affordable websites, mobile apps & digital solutions for township businesses. Based in Langaville, serving all of Ekurhuleni.">
+<meta property="og:url" content="https://www.kasicodesolutions.co.za/">
+<meta property="og:image" content="https://www.kasicodesolutions.co.za/images/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:site_name" content="KasiCode">
+
+<!-- ── TWITTER CARD ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KasiCode — Your Kasi Tech Plug">
+<meta name="twitter:description" content="Affordable websites, mobile apps & digital solutions for township businesses in Langaville, Ekurhuleni.">
+<meta name="twitter:image" content="https://www.kasicodesolutions.co.za/images/og-preview.jpg">
+
+<!-- ── GOOGLE ANALYTICS ── -->
+<!-- Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:#060B18; --navy-2:#0D1526; --navy-3:#12203A; --navy-4:#1A2E50;
+  --blue:#1A6CF5; --blue-light:#3D87FF; --orange:#FF6B2B;
+  --white:#FFFFFF; --gray-2:#A8B8D8; --gray-3:#5A6E8C;
+  --mono:'Space Mono',monospace; --sans:'DM Sans',sans-serif; --radius:4px;
+}
+html { scroll-behavior: smooth; }
+body { background:var(--navy); color:var(--gray-2); font-family:var(--sans); font-size:16px; line-height:1.7; overflow-x:hidden; }
+body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events:none; z-index:0; opacity:.4; }
+h1,h2,h3,h4 { font-family:var(--sans); color:var(--white); line-height:1.2; }
+
+/* ── NAVBAR ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:0 5%; height:64px; background:rgba(6,11,24,.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(26,108,245,.15); }
+.nav-logo { font-family:var(--mono); font-size:1.05rem; font-weight:700; color:var(--white); text-decoration:none; letter-spacing:-.5px; }
+.nav-logo span { color:var(--blue); }
+.nav-logo .cursor { display:inline-block; width:2px; height:1em; background:var(--orange); margin-left:2px; vertical-align:middle; animation:blink 1s step-end infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.nav-links { display:flex; align-items:center; gap:1.4rem; list-style:none; }
+.nav-links a { color:var(--gray-2); text-decoration:none; font-size:.85rem; font-weight:500; transition:color .2s; white-space:nowrap; }
+.nav-links a:hover { color:var(--white); }
+.btn-nav { background:transparent; border:1px solid var(--blue); color:var(--blue); padding:7px 16px; font-family:var(--mono); font-size:.75rem; cursor:pointer; transition:all .2s; text-decoration:none; letter-spacing:.5px; border-radius:var(--radius); white-space:nowrap; }
+.btn-nav:hover { background:var(--blue); color:var(--white); }
+.hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; background:none; border:none; padding:6px; width:36px; height:36px; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--gray-2); transition:all .3s; border-radius:2px; }
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+.mobile-nav { display:none; position:fixed; top:64px; left:0; right:0; background:rgba(6,11,24,.98); backdrop-filter:blur(20px); border-bottom:1px solid rgba(26,108,245,.15); z-index:199; padding:1rem 5% 1.5rem; flex-direction:column; gap:.25rem; }
+.mobile-nav.open { display:flex; }
+.mobile-nav a { color:var(--gray-2); text-decoration:none; font-size:.92rem; font-weight:500; padding:.65rem 0; border-bottom:1px solid rgba(255,255,255,.05); transition:color .2s; }
+.mobile-nav a:hover { color:var(--white); }
+.mobile-nav a:last-child { border-bottom:none; }
+.mobile-nav .btn-nav-mobile { display:inline-block; margin-top:.75rem; background:var(--blue); color:var(--white); padding:10px 20px; font-family:var(--mono); font-size:.75rem; border-radius:var(--radius); text-decoration:none; text-align:center; letter-spacing:.5px; }
+
+/* ── HERO ── */
+.hero { min-height:100vh; display:flex; align-items:center; padding:90px 5% 60px; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; top:-200px; right:-200px; width:700px; height:700px; background:radial-gradient(circle,rgba(26,108,245,.08) 0%,transparent 70%); pointer-events:none; }
+.hero::after { content:''; position:absolute; bottom:-100px; left:-100px; width:400px; height:400px; background:radial-gradient(circle,rgba(255,107,43,.05) 0%,transparent 70%); pointer-events:none; }
+.hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; max-width:1200px; margin:0 auto; width:100%; position:relative; z-index:1; }
+.hero-tag { font-family:var(--mono); font-size:.7rem; color:var(--blue); letter-spacing:2px; text-transform:uppercase; margin-bottom:1.25rem; display:flex; align-items:center; gap:8px; }
+.hero-tag::before { content:''; display:inline-block; width:22px; height:1px; background:var(--blue); }
+.hero h1 { font-size:clamp(2rem,5vw,3.8rem); font-weight:600; letter-spacing:-1px; margin-bottom:1.25rem; line-height:1.1; }
+.hero h1 em { font-style:normal; color:var(--blue); }
+.hero h1 .accent { color:var(--orange); }
+.hero-desc { font-size:.97rem; color:var(--gray-2); margin-bottom:2rem; max-width:480px; line-height:1.8; }
+.hero-actions { display:flex; gap:.875rem; flex-wrap:wrap; align-items:center; }
+.btn-primary { background:var(--blue); color:var(--white); padding:12px 26px; font-family:var(--sans); font-weight:600; font-size:.9rem; border:none; cursor:pointer; transition:all .2s; text-decoration:none; display:inline-block; border-radius:var(--radius); }
+.btn-primary:hover { background:var(--blue-light); transform:translateY(-2px); box-shadow:0 12px 30px rgba(26,108,245,.3); }
+.btn-ghost { background:transparent; color:var(--gray-2); padding:12px 16px; font-size:.87rem; font-weight:500; border:none; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:color .2s; }
+.btn-ghost:hover { color:var(--white); }
+.hero-stats { display:flex; gap:2rem; margin-top:2.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.07); flex-wrap:wrap; }
+.stat-num { font-family:var(--mono); font-size:1.4rem; font-weight:700; color:var(--white); }
+.stat-label { font-size:.76rem; color:var(--gray-3); margin-top:2px; }
+
+/* Code window */
+.code-window { background:var(--navy-2); border:1px solid rgba(26,108,245,.2); border-radius:12px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,.4); position:relative; }
+.code-window::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(26,108,245,.03) 0%,transparent 60%); pointer-events:none; }
+.code-titlebar { display:flex; align-items:center; gap:8px; padding:13px 18px; background:rgba(255,255,255,.02); border-bottom:1px solid rgba(255,255,255,.05); }
+.dot { width:11px; height:11px; border-radius:50%; }
+.dot-r{background:#FF5F56} .dot-y{background:#FFBD2E} .dot-g{background:#27C93F}
+.code-filename { font-family:var(--mono); font-size:.7rem; color:var(--gray-3); margin-left:8px; }
+.code-body { padding:20px; font-family:var(--mono); font-size:.73rem; line-height:1.8; position:relative; z-index:1; }
+.ln{color:var(--gray-3);margin-right:16px;user-select:none;font-size:.66rem}
+.kw{color:#C792EA} .fn{color:#82AAFF} .str{color:#C3E88D} .cm{color:#546E7A} .obj{color:#FFCB6B} .num{color:var(--orange)}
+
+/* ── SECTIONS ── */
+section { padding:80px 5%; position:relative; z-index:1; }
+.section-label { font-family:var(--mono); font-size:.66rem; color:var(--blue); letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+.section-label::before { content:'//'; color:var(--orange); }
+.section-title { font-size:clamp(1.5rem,3.5vw,2.5rem); font-weight:600; color:var(--white); margin-bottom:1rem; letter-spacing:-.5px; }
+.section-sub { font-size:.97rem; color:var(--gray-3); max-width:520px; line-height:1.75; }
+.container { max-width:1200px; margin:0 auto; }
+
+/* ── TICKER ── */
+.ticker-bar { background:var(--navy-2); border-top:1px solid rgba(26,108,245,.1); border-bottom:1px solid rgba(26,108,245,.1); padding:12px 0; overflow:hidden; white-space:nowrap; }
+.ticker-track { display:inline-flex; gap:50px; animation:scroll 28s linear infinite; }
+@keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.ticker-item { font-family:var(--mono); font-size:.7rem; color:var(--gray-3); letter-spacing:2px; text-transform:uppercase; display:inline-flex; align-items:center; gap:10px; }
+.ticker-item::before { content:'▸'; color:var(--blue); }
+
+/* ── SERVICES ── */
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.05); margin-top:3rem; }
+.service-card { background:var(--navy); padding:28px 24px; position:relative; overflow:hidden; transition:background .3s; }
+.service-card:hover { background:var(--navy-2); }
+.service-card:hover .service-line { width:100%; }
+.service-line { position:absolute; top:0; left:0; height:2px; width:0; background:var(--blue); transition:width .4s ease; }
+.service-num { font-family:var(--mono); font-size:.66rem; color:var(--blue); margin-bottom:1rem; letter-spacing:1px; }
+.service-card h3 { font-size:.97rem; font-weight:600; color:var(--white); margin-bottom:.5rem; }
+.service-card p { font-size:.85rem; color:var(--gray-3); line-height:1.7; }
+
+/* ── PORTFOLIO ── */
+.portfolio-filters { display:flex; flex-wrap:wrap; gap:7px; margin:2rem 0; }
+.filter-btn { font-family:var(--mono); font-size:.66rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray-3); background:transparent; border:1px solid rgba(255,255,255,.08); padding:7px 13px; cursor:pointer; transition:all .2s; border-radius:var(--radius); }
+.filter-btn:hover,.filter-btn.active { color:var(--blue); border-color:var(--blue); background:rgba(26,108,245,.08); }
+.portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; }
+.project-card { background:var(--navy-2); border:1px solid rgba(255,255,255,.06); border-radius:10px; overflow:hidden; transition:transform .3s,border-color .3s; display:flex; flex-direction:column; }
+.project-card:hover { transform:translateY(-4px); border-color:rgba(26,108,245,.3); }
+.project-card:hover .project-overlay { opacity:1; }
+.project-card:hover .project-img { transform:scale(1.05); }
+.project-thumb { aspect-ratio:16/9; overflow:hidden; position:relative; background:var(--navy-3); flex-shrink:0; }
+.project-img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s ease; display:block; }
+.project-overlay { position:absolute; inset:0; background:rgba(6,11,24,.88); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; }
+.project-overlay-btn { font-family:var(--mono); font-size:.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--white); background:var(--blue); border:none; padding:9px 18px; cursor:pointer; text-decoration:none; border-radius:var(--radius); transition:background .2s; display:inline-block; }
+.project-overlay-btn:hover { background:var(--blue-light); }
+.project-overlay-btn.no-link { background:rgba(255,255,255,.1); cursor:default; border:1px solid rgba(255,255,255,.15); }
+.project-body { padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; }
+.project-tag { font-family:var(--mono); font-size:.58rem; color:var(--blue); letter-spacing:2px; text-transform:uppercase; margin-bottom:5px; }
+.project-title { font-size:.92rem; font-weight:600; color:var(--white); margin-bottom:6px; line-height:1.35; }
+.project-desc { font-size:.79rem; color:var(--gray-3); line-height:1.65; flex:1; }
+.project-footer { display:flex; align-items:center; justify-content:space-between; margin-top:11px; padding-top:11px; border-top:1px solid rgba(255,255,255,.05); }
+.project-tech { display:flex; flex-wrap:wrap; gap:4px; }
+.tech-chip { font-family:var(--mono); font-size:.54rem; color:var(--gray-3); background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); padding:2px 6px; border-radius:2px; white-space:nowrap; }
+.project-live-dot { width:6px; height:6px; border-radius:50%; background:#27C93F; box-shadow:0 0 6px rgba(39,201,63,.5); flex-shrink:0; }
+.project-live-dot.offline { background:var(--gray-3); box-shadow:none; }
+.portfolio-more { text-align:center; margin-top:2rem; }
+.btn-show-more { font-family:var(--mono); font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--blue); background:transparent; border:1px solid rgba(26,108,245,.3); padding:10px 28px; cursor:pointer; transition:all .2s; border-radius:var(--radius); }
+.btn-show-more:hover { background:rgba(26,108,245,.08); border-color:var(--blue); }
+.project-card.hidden { display:none; }
+
+/* ── CLIENTS ── */
+.clients-section { background:var(--navy); border-top:1px solid rgba(255,255,255,.04); }
+.clients-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.04); margin-top:2.5rem; }
+.client-card { background:var(--navy-2); padding:22px 18px; display:flex; flex-direction:column; gap:5px; transition:background .2s; position:relative; }
+.client-card:hover { background:var(--navy-3); }
+.client-card:hover .client-line { width:100%; }
+.client-line { position:absolute; top:0; left:0; height:2px; width:0; background:var(--blue); transition:width .35s ease; }
+.client-name { font-size:.86rem; font-weight:600; color:var(--white); line-height:1.3; }
+.client-industry { font-family:var(--mono); font-size:.56rem; color:var(--blue); letter-spacing:1.5px; text-transform:uppercase; }
+.client-type { font-size:.75rem; color:var(--gray-3); }
+.client-dot { width:5px; height:5px; border-radius:50%; background:#27C93F; margin-top:2px; box-shadow:0 0 5px rgba(39,201,63,.4); display:inline-block; }
+
+/* ── ABOUT ── */
+.about-inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.terminal { background:var(--navy-2); border:1px solid rgba(26,108,245,.2); border-radius:10px; overflow:hidden; font-family:var(--mono); font-size:.76rem; line-height:1.9; box-shadow:0 30px 60px rgba(0,0,0,.3); }
+.terminal-header { background:rgba(255,255,255,.03); padding:11px 18px; display:flex; align-items:center; gap:8px; border-bottom:1px solid rgba(255,255,255,.05); }
+.terminal-body { padding:20px; }
+.t-prompt{color:var(--blue)} .t-cmd{color:var(--white)} .t-out{color:var(--gray-3)} .t-val{color:var(--orange)} .t-ok{color:#27C93F}
+.about-badges { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1.25rem; }
+.badge-stat { background:var(--navy-2); border:1px solid rgba(255,255,255,.06); padding:16px; border-radius:8px; }
+.badge-stat .num { font-family:var(--mono); font-size:1.6rem; font-weight:700; color:var(--white); }
+.badge-stat .label { font-size:.76rem; color:var(--gray-3); margin-top:3px; }
+
+/* ── TEAM ── */
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem; }
+.team-card { background:var(--navy-2); border:1px solid rgba(255,255,255,.06); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:border-color .3s,transform .3s,box-shadow .3s; }
+.team-card:hover { border-color:rgba(26,108,245,.35); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.3); }
+.team-photo-wrap { width:100%; aspect-ratio:4/5; overflow:hidden; position:relative; background:var(--navy-3); flex-shrink:0; }
+.team-photo { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transition:transform .45s ease; }
+.team-card:hover .team-photo { transform:scale(1.04); }
+.team-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,var(--navy-3) 0%,var(--navy-4) 100%); }
+.team-photo-placeholder::before { content:attr(data-initials); font-family:var(--mono); font-size:2.8rem; font-weight:700; color:rgba(26,108,245,.18); }
+.team-photo-overlay { position:absolute; bottom:0; left:0; right:0; height:50px; background:linear-gradient(0deg,var(--navy-2) 0%,transparent 100%); pointer-events:none; }
+.team-body { padding:18px 20px 22px; flex:1; }
+.team-card h3 { font-size:1rem; font-weight:600; color:var(--white); margin-bottom:3px; letter-spacing:-.2px; }
+.team-role { font-family:var(--mono); font-size:.6rem; color:var(--orange); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:.75rem; }
+.team-bio { font-size:.81rem; color:var(--gray-3); line-height:1.7; margin-bottom:.9rem; }
+.team-skills { display:flex; flex-wrap:wrap; gap:4px; }
+.skill-tag { font-family:var(--mono); font-size:.58rem; color:var(--blue); background:rgba(26,108,245,.08); border:1px solid rgba(26,108,245,.15); padding:3px 8px; border-radius:2px; }
+
+/* ── TESTIMONIALS ── */
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:3rem; }
+.testi-card { background:var(--navy); border:1px solid rgba(255,255,255,.06); border-radius:10px; padding:24px; }
+.testi-quote { font-size:1.6rem; color:rgba(26,108,245,.28); font-family:serif; line-height:1; margin-bottom:.75rem; }
+.testi-text { font-size:.86rem; color:var(--gray-2); line-height:1.75; margin-bottom:1.1rem; font-style:italic; }
+.testi-stars { color:var(--orange); font-size:.76rem; margin-bottom:.75rem; letter-spacing:2px; }
+.testi-author { display:flex; align-items:center; gap:11px; }
+.testi-avi { width:36px; height:36px; border-radius:50%; background:var(--navy-3); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:.7rem; font-weight:700; color:var(--blue); flex-shrink:0; }
+.testi-name { font-weight:600; color:var(--white); font-size:.86rem; }
+.testi-loc { font-size:.74rem; color:var(--gray-3); margin-top:2px; }
+
+/* ── PRICING ── */
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:3rem; }
+.pricing-row2 { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; margin-top:1.1rem; max-width:820px; margin-left:auto; margin-right:auto; }
+.price-card { background:var(--navy-2); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:28px; position:relative; transition:transform .3s,border-color .3s; }
+.price-card:hover { transform:translateY(-4px); }
+.price-card.featured { border-color:var(--blue); background:linear-gradient(160deg,rgba(26,108,245,.08) 0%,var(--navy-2) 60%); }
+.featured-tag { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--blue); color:var(--white); font-family:var(--mono); font-size:.6rem; letter-spacing:2px; text-transform:uppercase; padding:4px 14px; border-radius:20px; white-space:nowrap; }
+.price-type { font-family:var(--mono); font-size:.65rem; color:var(--blue); letter-spacing:2px; text-transform:uppercase; margin-bottom:.8rem; }
+.price-amount { font-family:var(--mono); font-size:1.9rem; font-weight:700; color:var(--white); margin-bottom:.35rem; line-height:1; }
+.price-from { font-size:.84rem; color:var(--gray-3); margin-bottom:1.1rem; }
+.price-features { list-style:none; margin-bottom:1.5rem; }
+.price-features li { font-size:.84rem; color:var(--gray-3); padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); display:flex; align-items:center; gap:8px; }
+.price-features li::before { content:'›'; color:var(--blue); font-size:1rem; flex-shrink:0; }
+.btn-price { display:block; width:100%; padding:11px; font-family:var(--mono); font-size:.72rem; letter-spacing:1px; text-transform:uppercase; text-align:center; text-decoration:none; border:1px solid var(--blue); color:var(--blue); background:transparent; cursor:pointer; transition:all .2s; border-radius:var(--radius); }
+.btn-price:hover { background:var(--blue); color:var(--white); }
+.btn-price.solid { background:var(--blue); color:var(--white); }
+.btn-price.solid:hover { background:var(--blue-light); border-color:var(--blue-light); }
+.maintenance-banner { margin-top:1.75rem; background:var(--navy-2); border:1px solid rgba(26,108,245,.18); border-radius:8px; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.maintenance-right { text-align:right; flex-shrink:0; }
+.payment-note { text-align:center; font-family:var(--mono); font-size:.62rem; color:var(--gray-3); letter-spacing:1px; margin-top:1.25rem; line-height:1.8; }
+
+/* ── FAQ ── */
+.faq-section { background:var(--navy-2); border-top:1px solid rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.04); }
+.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.04); margin-top:3rem; }
+.faq-item { background:var(--navy-2); padding:0; cursor:pointer; transition:background .2s; position:relative; }
+.faq-item:hover { background:var(--navy-3); }
+.faq-question { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:22px 24px; }
+.faq-q-text { font-size:.92rem; font-weight:600; color:var(--white); line-height:1.4; }
+.faq-icon { width:24px; height:24px; border-radius:50%; border:1px solid rgba(26,108,245,.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--blue); font-size:1rem; font-weight:300; transition:transform .3s, background .2s; line-height:1; }
+.faq-item.open .faq-icon { transform:rotate(45deg); background:rgba(26,108,245,.12); }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; }
+.faq-answer p { font-size:.85rem; color:var(--gray-3); line-height:1.75; padding:0 24px 22px; }
+.faq-item.open .faq-answer { max-height:300px; }
+.faq-item:hover .faq-q-text { color:var(--blue); }
+.faq-cta { text-align:center; margin-top:2.5rem; }
+.faq-cta p { font-size:.9rem; color:var(--gray-3); margin-bottom:1rem; }
+
+/* ── CTA ── */
+.cta-section { background:var(--navy-2); border-top:1px solid rgba(26,108,245,.1); text-align:center; padding:80px 5%; position:relative; overflow:hidden; }
+.cta-section::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:350px; background:radial-gradient(ellipse,rgba(26,108,245,.06) 0%,transparent 70%); pointer-events:none; }
+.cta-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.05); max-width:720px; margin:3rem auto 0; border:1px solid rgba(255,255,255,.05); }
+.cta-contact-item { background:var(--navy-2); padding:22px; text-align:center; transition:background .2s; }
+.cta-contact-item:hover { background:var(--navy-3); }
+.cta-contact-icon { font-family:var(--mono); font-size:.6rem; color:var(--blue); letter-spacing:2px; text-transform:uppercase; margin-bottom:7px; display:block; }
+.cta-contact-val { font-size:.86rem; color:var(--white); font-weight:500; text-decoration:none; word-break:break-word; }
+.cta-contact-val:hover { color:var(--blue); }
+
+/* ── FOOTER ── */
+footer { padding:32px 5%; border-top:1px solid rgba(255,255,255,.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.footer-logo { font-family:var(--mono); font-size:.97rem; font-weight:700; color:var(--white); text-decoration:none; }
+.footer-logo span { color:var(--blue); }
+.footer-links { display:flex; gap:1.5rem; list-style:none; flex-wrap:wrap; }
+.footer-links a { font-size:.82rem; color:var(--gray-3); text-decoration:none; transition:color .2s; }
+.footer-links a:hover { color:var(--white); }
+.footer-copy { font-family:var(--mono); font-size:.67rem; color:var(--gray-3); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float { position:fixed; bottom:80px; right:20px; z-index:98; width:52px; height:52px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,.4); text-decoration:none; transition:transform .2s, box-shadow .2s; animation:wa-pulse 2.5s ease infinite; }
+.wa-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,.55); animation:none; }
+.wa-float svg { width:28px; height:28px; fill:#fff; }
+.wa-tooltip { position:absolute; right:62px; background:var(--navy-2); color:var(--white); font-family:var(--mono); font-size:.65rem; letter-spacing:.5px; white-space:nowrap; padding:6px 12px; border-radius:4px; border:1px solid rgba(255,255,255,.1); opacity:0; pointer-events:none; transition:opacity .2s; }
+.wa-float:hover .wa-tooltip { opacity:1; }
+@keyframes wa-pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.08)} }
+
+/* ── BACK TO TOP ── */
+#back-to-top { position:fixed; bottom:24px; right:20px; z-index:99; width:42px; height:42px; background:var(--navy-2); border:1px solid rgba(26,108,245,.3); color:var(--blue); font-family:var(--mono); font-size:.95rem; cursor:pointer; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s,background .2s,border-color .2s,transform .2s; }
+#back-to-top.visible { opacity:1; pointer-events:auto; }
+#back-to-top:hover { background:var(--blue); color:var(--white); border-color:var(--blue); transform:translateY(-3px); box-shadow:0 8px 20px rgba(26,108,245,.25); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp .6s ease forwards; opacity:0; }
+.delay-1{animation-delay:.1s} .delay-2{animation-delay:.2s} .delay-3{animation-delay:.3s} .delay-4{animation-delay:.4s}
+.grid-lines { position:absolute; inset:0; background-image:linear-gradient(rgba(26,108,245,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,108,245,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+
+/* ════════════════════
+   RESPONSIVE
+════════════════════ */
+@media (max-width:1024px) {
+  .nav-links { gap:1rem; }
+  .nav-links a { font-size:.8rem; }
+  .hero-inner { gap:3rem; }
+  .team-grid { grid-template-columns:1fr 1fr; }
+  .clients-grid { grid-template-columns:repeat(3,1fr); }
+  .about-inner { gap:3.5rem; }
+  .faq-grid { grid-template-columns:1fr; }
+}
+@media (max-width:900px) {
+  nav { padding:0 4%; }
+  .nav-links,.btn-nav { display:none; }
+  .hamburger { display:flex; }
+  .hero-inner { grid-template-columns:1fr; }
+  .code-window { display:none; }
+  .hero { padding:88px 4% 60px; min-height:auto; }
+  .hero-desc { max-width:100%; }
+  .about-inner { grid-template-columns:1fr; gap:2.5rem; }
+  .services-grid,.portfolio-grid,.testi-grid { grid-template-columns:1fr 1fr; }
+  .clients-grid { grid-template-columns:repeat(2,1fr); }
+  .pricing-grid { grid-template-columns:1fr 1fr; }
+  .pricing-row2 { grid-template-columns:1fr 1fr; max-width:100%; }
+  .cta-grid { grid-template-columns:1fr 1fr; max-width:100%; }
+  section { padding:70px 4%; }
+}
+@media (max-width:640px) {
+  .hero { padding:82px 4% 48px; }
+  .hero h1 { font-size:2rem; }
+  .hero-stats { gap:1.25rem; }
+  .hero-stats .stat-num { font-size:1.25rem; }
+  .services-grid { grid-template-columns:1fr; }
+  .portfolio-grid { grid-template-columns:1fr 1fr; }
+  .clients-grid { grid-template-columns:1fr 1fr; }
+  .team-grid { grid-template-columns:1fr 1fr; }
+  .testi-grid,.pricing-grid,.pricing-row2,.cta-grid { grid-template-columns:1fr; }
+  .about-badges { grid-template-columns:1fr 1fr; }
+  .maintenance-banner { flex-direction:column; align-items:flex-start; }
+  .maintenance-right { text-align:left; width:100%; }
+  footer { flex-direction:column; align-items:flex-start; gap:.75rem; }
+  section { padding:60px 4%; }
+  .section-title { font-size:1.5rem; }
+}
+@media (max-width:480px) {
+  .hero h1 { font-size:1.8rem; letter-spacing:-.5px; }
+  .hero-stats { gap:1rem; }
+  .hero-actions { flex-direction:column; align-items:flex-start; }
+  .hero-actions .btn-primary,.hero-actions .btn-ghost { width:100%; text-align:center; justify-content:center; }
+  .portfolio-grid,.team-grid { grid-template-columns:1fr; }
+  .clients-grid { grid-template-columns:1fr 1fr; }
+  .filter-btn { font-size:.6rem; padding:6px 10px; }
+  .price-amount { font-size:1.65rem; }
+  .maintenance-banner { padding:16px 18px; }
+  section { padding:52px 4%; }
+  .wa-float { width:46px; height:46px; bottom:76px; right:16px; }
+  .wa-float svg { width:24px; height:24px; }
+  #back-to-top { width:40px; height:40px; right:16px; }
+}
+@media (max-width:380px) {
+  nav { padding:0 4%; height:58px; }
+  .mobile-nav { top:58px; }
+  .hero { padding:74px 4% 44px; }
+  .hero h1 { font-size:1.65rem; }
+  .hero-tag,.hero-desc { font-size:.88rem; }
+  .btn-primary { padding:11px 20px; font-size:.87rem; }
+  .section-title { font-size:1.4rem; }
+  .clients-grid { grid-template-columns:1fr 1fr; }
+  .about-badges { grid-template-columns:1fr 1fr; }
+  .badge-stat .num { font-size:1.4rem; }
+  .team-photo-wrap { aspect-ratio:4/3; }
+  .faq-q-text { font-size:.86rem; }
+}
+@media (max-width:320px) {
+  nav { padding:0 3%; }
+  .hero { padding:70px 3% 40px; }
+  .hero h1 { font-size:1.5rem; }
+  .btn-primary { padding:10px 16px; font-size:.85rem; width:100%; text-align:center; display:block; }
+  .btn-ghost { padding:10px 0; font-size:.83rem; width:100%; justify-content:flex-start; }
+  .hero-actions { flex-direction:column; gap:.6rem; }
+  .hero-stats { gap:.75rem; }
+  .hero-stats .stat-num { font-size:1.1rem; }
+  .clients-grid,.about-badges { grid-template-columns:1fr; }
+  .section-title { font-size:1.3rem; }
+  .testi-card,.price-card { padding:18px 16px; }
+  .price-amount { font-size:1.5rem; }
+  section { padding:48px 3%; }
+  footer { padding:28px 3%; }
+  .footer-links { gap:1rem; }
+  .maintenance-banner { padding:14px 16px; }
+  #back-to-top { width:36px; height:36px; bottom:14px; right:10px; }
+  .wa-float { width:42px; height:42px; bottom:60px; right:10px; }
+  .faq-question { padding:18px 16px; }
+  .faq-answer p { padding:0 16px 18px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><span>Kasi</span>Code<span class="cursor"></span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="contact.html" class="btn-nav">Get a Quote</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#clients">Clients</a>
+  <a href="#about">About</a>
+  <a href="#team">Team</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="contact.html" class="btn-nav-mobile">Get a Quote &#8599;</a>
+</div>
+
+<div class="hero">
+  <div class="grid-lines"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag fade-up">Langaville &middot; Gauteng &middot; SA</div>
+      <h1 class="fade-up delay-1">Build Digital.<br>Grow <em>Local.</em><br>Think <span class="accent">Global.</span></h1>
+      <p class="hero-desc fade-up delay-2">KasiCode is Langaville's tech plug — building websites, mobile apps, and business systems that help township entrepreneurs compete and win online.</p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="contact.html" class="btn-primary">Start Your Project</a>
+        <a href="#portfolio" class="btn-ghost">See Our Work &#8594;</a>
+      </div>
+      <div class="hero-stats fade-up delay-4">
+        <div><div class="stat-num">20+</div><div class="stat-label">Projects Shipped</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">Client Satisfaction</div></div>
+        <div><div class="stat-num">24/7</div><div class="stat-label">Local Support</div></div>
+      </div>
+    </div>
+    <div class="code-window fade-up delay-2">
+      <div class="code-titlebar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="code-filename">kasicode.config.js</span></div>
+      <div class="code-body">
+        <div><span class="ln">01</span><span class="cm">// KasiCode — Your Kasi Tech Plug</span></div>
+        <div><span class="ln">02</span>&nbsp;</div>
+        <div><span class="ln">03</span><span class="kw">const</span> <span class="fn">client</span> = {</div>
+        <div><span class="ln">04</span>&nbsp;&nbsp;<span class="obj">name</span>: <span class="str">"Your Business"</span>,</div>
+        <div><span class="ln">05</span>&nbsp;&nbsp;<span class="obj">location</span>: <span class="str">"Langaville, SA"</span>,</div>
+        <div><span class="ln">06</span>&nbsp;&nbsp;<span class="obj">goal</span>: <span class="str">"Grow Online"</span>,</div>
+        <div><span class="ln">07</span>&nbsp;&nbsp;<span class="obj">budget</span>: <span class="str">"Affordable"</span></div>
+        <div><span class="ln">08</span>};</div>
+        <div><span class="ln">09</span>&nbsp;</div>
+        <div><span class="ln">10</span><span class="kw">async function</span> <span class="fn">buildYourDream</span>(client) {</div>
+        <div><span class="ln">11</span>&nbsp;&nbsp;<span class="kw">const</span> result = <span class="kw">await</span></div>
+        <div><span class="ln">12</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">KasiCode</span>.deliver({</div>
+        <div><span class="ln">13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="obj">website</span>: <span class="num">true</span>,</div>
+        <div><span class="ln">14</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="obj">mobile</span>: <span class="num">true</span>,</div>
+        <div><span class="ln">15</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="obj">support</span>: <span class="str">"24/7"</span>,</div>
+        <div><span class="ln">16</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="obj">quality</span>: <span class="str">"world-class"</span></div>
+        <div><span class="ln">17</span>&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+        <div><span class="ln">18</span>&nbsp;&nbsp;<span class="kw">return</span> <span class="fn">result</span>.success; <span class="cm">// always true</span></div>
+        <div><span class="ln">19</span>}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ticker-item">Web Development</span><span class="ticker-item">Mobile Apps</span><span class="ticker-item">CV Design</span><span class="ticker-item">Business Systems</span><span class="ticker-item">E-Commerce</span><span class="ticker-item">CRM Systems</span><span class="ticker-item">Poster Design</span><span class="ticker-item">Langaville</span><span class="ticker-item">Tsakane</span><span class="ticker-item">Kwa-Thema</span><span class="ticker-item">Springs</span><span class="ticker-item">Ekurhuleni</span>
+    <span class="ticker-item">Web Development</span><span class="ticker-item">Mobile Apps</span><span class="ticker-item">CV Design</span><span class="ticker-item">Business Systems</span><span class="ticker-item">E-Commerce</span><span class="ticker-item">CRM Systems</span><span class="ticker-item">Poster Design</span><span class="ticker-item">Langaville</span><span class="ticker-item">Tsakane</span><span class="ticker-item">Kwa-Thema</span><span class="ticker-item">Springs</span><span class="ticker-item">Ekurhuleni</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">What We Plug You Into</h2>
+    <p class="section-sub">From a simple landing page to a full business system — we build what your business needs to grow.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-line"></div><div class="service-num">01</div><h3>Website Development</h3><p>Fast, mobile-ready websites that make your business look professional and pull in more customers — built to rank on Google.</p></div>
+      <div class="service-card"><div class="service-line"></div><div class="service-num">02</div><h3>Mobile App Development</h3><p>Custom Android and iOS apps that connect you directly with customers on their phones — booking, ordering, anything you need.</p></div>
+      <div class="service-card"><div class="service-line"></div><div class="service-num">03</div><h3>CV &amp; Portfolio Design</h3><p>Stand out to employers with a professionally designed CV and portfolio website that showcases your skills and gets callbacks.</p></div>
+      <div class="service-card"><div class="service-line"></div><div class="service-num">04</div><h3>Business Systems &amp; CRM</h3><p>Inventory tracking, booking systems, CRM, and management tools — tailored so you can run your hustle without the headaches.</p></div>
+      <div class="service-card"><div class="service-line"></div><div class="service-num">05</div><h3>E-Commerce Stores</h3><p>Sell your products online, 24/7. We set up your full online shop with payments, inventory, and delivery integrations.</p></div>
+      <div class="service-card"><div class="service-line"></div><div class="service-num">06</div><h3>Marketing &amp; Poster Design</h3><p>Eye-catching posters, social media content, and digital marketing campaigns that make your brand impossible to ignore.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Our Work Speaks for Itself</h2>
+    <p class="section-sub">Real projects. Real clients. Built and shipped by KasiCode.</p>
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="corporate">Corporate</button>
+    </div>
+    <div class="portfolio-grid" id="portfolio-grid"></div>
+    <div class="portfolio-more"><button class="btn-show-more" id="show-more-btn">Show All 16 Projects &#8595;</button></div>
+  </div>
+</section>
+
+<section id="clients" class="clients-section">
+  <div class="container">
+    <div class="section-label">Clients</div>
+    <h2 class="section-title">Businesses That Trust KasiCode</h2>
+    <p class="section-sub">From law firms to trading companies, auction houses to security units — we build for businesses that mean business.</p>
+    <div class="clients-grid">
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Legal</div><div class="client-name">Kuvasha Groener Attorneys</div><div class="client-type">100% Black Female-Owned Law Firm</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Security</div><div class="client-name">Reaction Unit SA</div><div class="client-type">Security Response — CRM System</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Industrial</div><div class="client-name">True Seal Rubberising</div><div class="client-type">Industrial Rubberising Services</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Trading</div><div class="client-name">Jireh Trading</div><div class="client-type">South African Trading Enterprise</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Auctions</div><div class="client-name">Sibanye Auction</div><div class="client-type">Online Auction Platform</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Marketing</div><div class="client-name">JZD Digital Marketing</div><div class="client-type">Digital Marketing Agency</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Lead Gen</div><div class="client-name">LeadLink Africa</div><div class="client-type">Pan-African Lead Generation Platform</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Education</div><div class="client-name">TUT — Tshwane Univ. of Tech</div><div class="client-type">Campus Navigation System</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Transport</div><div class="client-name">Nthome Ridez</div><div class="client-type">SA E-Hailing Platform (Web + Mobile)</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Community</div><div class="client-name">Kasi 360</div><div class="client-type">Township Community &amp; Business Directory</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">Business</div><div class="client-name">AfriBiz Connect</div><div class="client-type">African Business Networking Platform</div><span class="client-dot"></span></div>
+      <div class="client-card"><div class="client-line"></div><div class="client-industry">E-Commerce</div><div class="client-name">Thirsti Water</div><div class="client-type">Premium Bottled Water E-Commerce</div><span class="client-dot"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <div class="terminal">
+          <div class="terminal-header"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span style="font-family:var(--mono);font-size:.68rem;color:var(--gray-3);margin-left:8px">terminal — kasicode</span></div>
+          <div class="terminal-body">
+            <div><span class="t-prompt">~</span> <span class="t-cmd">whoami</span></div>
+            <div><span class="t-out">KasiCode — Langaville-based digital agency</span></div>
+            <div>&nbsp;</div>
+            <div><span class="t-prompt">~</span> <span class="t-cmd">cat mission.txt</span></div>
+            <div><span class="t-out">Empowering township businesses with</span></div>
+            <div><span class="t-out">world-class tech at kasi prices.</span></div>
+            <div>&nbsp;</div>
+            <div><span class="t-prompt">~</span> <span class="t-cmd">ls ./stack/</span></div>
+            <div><span class="t-val">React &nbsp;Next.js &nbsp;Node &nbsp;Flutter</span></div>
+            <div><span class="t-val">Python &nbsp;Firebase &nbsp;AWS &nbsp;MySQL</span></div>
+            <div>&nbsp;</div>
+            <div><span class="t-prompt">~</span> <span class="t-cmd">./check-availability.sh</span></div>
+            <div><span class="t-ok">&#10004; Available for new projects</span></div>
+            <div><span class="t-ok">&#10004; Free consultations open</span></div>
+            <div>&nbsp;</div>
+            <div><span class="t-prompt">~</span> <span class="t-cmd">&#9608;</span></div>
+          </div>
+        </div>
+        <div class="about-badges">
+          <div class="badge-stat"><div class="num">20+</div><div class="label">Projects Completed</div></div>
+          <div class="badge-stat"><div class="num">12+</div><div class="label">Clients Served</div></div>
+          <div class="badge-stat"><div class="num">100%</div><div class="label">Satisfaction Rate</div></div>
+          <div class="badge-stat"><div class="num">24/7</div><div class="label">Local Support</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">About KasiCode</div>
+        <h2 class="section-title">Built in the Kasi.<br>Built for the Kasi.</h2>
+        <p style="color:var(--gray-3);line-height:1.85;margin-bottom:1.4rem;">We're not just a dev agency — we're your neighbours. Based in Langaville, we understand what township entrepreneurs actually need: affordable, reliable, no-nonsense digital solutions that work.</p>
+        <p style="color:var(--gray-3);line-height:1.85;margin-bottom:1.75rem;">From law firms to spaza shops, from security companies to startups — we build tools that help you compete, grow, and win online. No corporate jargon. No hidden costs. Just results.</p>
+        <a href="contact.html" class="btn-primary">Let's Build Something &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <div class="section-label">The Team</div>
+    <h2 class="section-title">Meet the Plugs</h2>
+    <p class="section-sub">Three specialists. One mission: to make your business unstoppable online.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="images/Bobo.jpeg" alt="Rebotilwe Mokiba" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" data-initials="RM" style="display:none;"></div>
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-body">
+          <h3>Rebotilwe Mokiba</h3>
+          <div class="team-role">Founder &middot; Lead Developer</div>
+          <p class="team-bio">The visionary behind KasiCode. Rebotilwe leads every project from concept to launch — full-stack expertise, deep community roots, and a drive to make every kasi business unstoppable online.</p>
+          <div class="team-skills"><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">MySQL</span><span class="skill-tag">AWS</span><span class="skill-tag">UI/UX</span></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="images/Sandile.jpeg" alt="Sandile Mabilisa" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" data-initials="SM" style="display:none;"></div>
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-body">
+          <h3>Sandile Mabilisa</h3>
+          <div class="team-role">Full Stack Developer</div>
+          <p class="team-bio">The technical powerhouse. Sandile builds robust web and mobile applications — creative problem-solver, clean-code advocate, and the engine behind KasiCode's most complex systems.</p>
+          <div class="team-skills"><span class="skill-tag">Flutter</span><span class="skill-tag">Python</span><span class="skill-tag">Firebase</span><span class="skill-tag">React Native</span><span class="skill-tag">Django</span><span class="skill-tag">PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="images/phumla.jpg" alt="Phumla Mzizi" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" data-initials="PM" style="display:none;"></div>
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-body">
+          <h3>Phumla Mzizi</h3>
+          <div class="team-role">Marketing &amp; Creative Design</div>
+          <p class="team-bio">The creative force. Phumla drives KasiCode's brand, social presence, and visual identity — designing posters, campaigns, and marketing assets that make clients impossible to ignore.</p>
+          <div class="team-skills"><span class="skill-tag">Marketing</span><span class="skill-tag">Poster Design</span><span class="skill-tag">Social Media</span><span class="skill-tag">Branding</span><span class="skill-tag">Canva</span><span class="skill-tag">Photoshop</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);">
+  <div class="container">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-sub">Real words from real people we've plugged in.</p>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">KasiCode built me a beautiful website for my spaza shop. Now customers can see my prices and specials online. Business has never been better!</p><div class="testi-author"><div class="testi-avi">TN</div><div><div class="testi-name">Thabo Ndlovu</div><div class="testi-loc">Spaza Owner &middot; Langaville</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">Sandile revamped my CV and I got interview calls within a week. The design was so professional — I finally stood out from the hundreds of other applicants.</p><div class="testi-author"><div class="testi-avi">ND</div><div><div class="testi-name">Nosipho Dlamini</div><div class="testi-loc">Job Seeker &middot; Tsakane</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">The booking system KasiCode built for my salon saves me hours every week. My customers love booking online anytime. They're truly the tech plug!</p><div class="testi-author"><div class="testi-avi">LM</div><div><div class="testi-name">Lerato Mokoena</div><div class="testi-loc">Salon Owner &middot; Kwa-Thema</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Kasi Prices. Global Quality.</h2>
+    <p class="section-sub">Honest, affordable pricing built for township businesses — no hidden fees, no corporate markup, no surprises.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-type">CV Design</div>
+        <div class="price-amount">R150</div>
+        <div class="price-from">starting from</div>
+        <ul class="price-features"><li>Professional 1–2 page CV</li><li>ATS-friendly layout</li><li>PDF &amp; Word formats</li><li>2 free revisions</li><li>Turnaround: 24–48 hours</li></ul>
+        <a href="contact.html" class="btn-price">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-tag">Most Popular</div>
+        <div class="price-type">Basic Website</div>
+        <div class="price-amount">R1,500</div>
+        <div class="price-from">starting from</div>
+        <ul class="price-features"><li>Up to 5 pages</li><li>Mobile responsive design</li><li>Contact form</li><li>Google Maps integration</li><li>Basic SEO setup</li><li>1 month free support</li></ul>
+        <a href="contact.html" class="btn-price solid">Get Quote</a>
+      </div>
+      <div class="price-card">
+        <div class="price-type">Business Website</div>
+        <div class="price-amount">R3,500</div>
+        <div class="price-from">starting from</div>
+        <ul class="price-features"><li>Up to 10 pages</li><li>Booking / enquiry system</li><li>WhatsApp chat button</li><li>Photo &amp; video gallery</li><li>Social media links</li><li>2 months free support</li></ul>
+        <a href="contact.html" class="btn-price">Get Quote</a>
+      </div>
+    </div>
+    <div class="pricing-row2">
+      <div class="price-card">
+        <div class="price-type">E-Commerce Store</div>
+        <div class="price-amount">R6,000</div>
+        <div class="price-from">starting from</div>
+        <ul class="price-features"><li>Full online shop setup</li><li>PayFast / Yoco payments</li><li>Product catalogue management</li><li>Order tracking system</li><li>Mobile optimised checkout</li><li>3 months free support</li></ul>
+        <a href="contact.html" class="btn-price">Get Quote</a>
+      </div>
+      <div class="price-card">
+        <div class="price-type">App &amp; Custom Systems</div>
+        <div class="price-amount">R8,000</div>
+        <div class="price-from">starting from</div>
+        <ul class="price-features"><li>Android or iOS mobile app</li><li>CRM / inventory systems</li><li>Booking &amp; scheduling apps</li><li>Custom dashboard &amp; admin panel</li><li>API &amp; database integration</li><li>Ongoing maintenance available</li></ul>
+        <a href="contact.html" class="btn-price">Contact Us</a>
+      </div>
+    </div>
+    <div class="maintenance-banner">
+      <div>
+        <div style="font-family:var(--mono);font-size:.62rem;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;">// Add-on</div>
+        <div style="font-size:.97rem;font-weight:600;color:var(--white);margin-bottom:4px;">Monthly Website Maintenance</div>
+        <div style="font-size:.82rem;color:var(--gray-3);">Hosting, updates, security checks, backups &amp; WhatsApp support — keep your site running smoothly every month.</div>
+      </div>
+      <div class="maintenance-right">
+        <div style="font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--white);">R300<span style="font-size:.86rem;color:var(--gray-3);font-weight:400;">/mo</span></div>
+        <a href="contact.html" class="btn-price" style="display:inline-block;width:auto;padding:8px 18px;margin-top:8px;white-space:nowrap;">Add to Package</a>
+      </div>
+    </div>
+    <p class="payment-note">&#10003; &nbsp;50% deposit to start &nbsp;&middot;&nbsp; 50% on delivery &nbsp;&middot;&nbsp; Payment via EFT, PayFast or Yoco</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Questions We Get Asked</h2>
+    <p class="section-sub">Everything you need to know before we start building together.</p>
+    <div class="faq-grid" id="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">How long does a website take to build?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>It depends on the size. A basic 5-page website takes 5–10 working days. A business website with booking systems takes 2–4 weeks. A full e-commerce store or mobile app can take 4–8 weeks. We'll give you a clear timeline before we start — no surprises.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Do you offer payment plans?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes. We work on a 50% deposit upfront and 50% on delivery model. For larger projects (R5,000+) we can discuss a 3-part payment plan: 40% to start, 30% at midpoint, 30% on delivery. WhatsApp us to chat about what works for you.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Do I need to buy hosting and a domain separately?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>We handle everything for you. Domain registration costs around R150–R250/year and hosting from R100–R400/month depending on your needs. We'll recommend the best options for your budget and set it all up — you don't need to be technical.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Can you maintain my site after it's done?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Absolutely — that's what our R300/month maintenance plan covers. We handle updates, security checks, backups, and small content changes. You focus on running your business, we keep your site running smoothly. Support is via WhatsApp.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Will my website work on phones?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>100% — every site we build is fully mobile responsive. Most of your customers will visit on their phones, so we design mobile-first. Your site will look sharp on any screen, from a small Android to a large desktop monitor.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">What do you need from me to get started?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Just contact us and we'll chat! We'll ask about your business, what you need, and your budget. From there we send you a simple quote. Once you're happy and the deposit is paid, we start building. You provide your logo (if you have one), photos, and business info — we do the rest.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Do you work with clients outside Langaville?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes! We're based in Langaville but we serve clients across Tsakane, Kwa-Thema, Springs, Brakpan, and all of Ekurhuleni. We also work with clients across South Africa — everything is done remotely via WhatsApp, email, and video call.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span class="faq-q-text">Can you design a logo or brand identity for my business?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes — our creative team can design a logo, brand colours, and visual identity that makes your business look professional and memorable. Branding packages start from R350. Ask us when you get in touch and we'll bundle it with your project.</p></div>
+      </div>
+
+    </div>
+    <div class="faq-cta">
+      <p>Still have a question? We're always available on WhatsApp.</p>
+      <a href="https://wa.me/27635773160" target="_blank" rel="noopener" class="btn-primary">Chat on WhatsApp &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div style="position:relative;z-index:1;">
+    <div class="section-label" style="justify-content:center;">Get in Touch</div>
+    <h2 class="section-title" style="font-size:clamp(1.7rem,4vw,2.7rem);max-width:540px;margin:.5rem auto 1rem;">Ready to Build Something Great?</h2>
+    <p style="color:var(--gray-3);max-width:440px;margin:0 auto 2.25rem;font-size:.94rem;">Tell us about your project and we'll get back to you within 24 hours. Free consultation, no commitment.</p>
+    <a href="contact.html" class="btn-primary">Start the Conversation &#8594;</a>
+    <div class="cta-grid">
+      <div class="cta-contact-item"><span class="cta-contact-icon">Phone</span><a href="tel:0635773160" class="cta-contact-val">063 577 3160</a></div>
+      <div class="cta-contact-item"><span class="cta-contact-icon">Email</span><a href="mailto:rebotilwemokiba@gmail.com" class="cta-contact-val">rebotilwemokiba@gmail.com</a></div>
+      <div class="cta-contact-item"><span class="cta-contact-icon">Location</span><span class="cta-contact-val">5787 uMzinto Rd, Langaville</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo"><span>Kasi</span>Code</a>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&#169; 2025 <span style="color:var(--blue)">KasiCode</span> &middot; Langaville, Gauteng &middot; Developed by KasiCode</div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="wa-float" href="https://wa.me/27635773160?text=Hi%20KasiCode%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-tooltip">Chat with us &#128172;</span>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.494 2.027 7.805L0 32l8.418-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.79-1.865l-.487-.29-5.002 1.193 1.224-4.866-.317-.5A13.286 13.286 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.865c-.4-.2-2.356-1.162-2.72-1.295-.365-.133-.63-.2-.896.2-.266.4-1.03 1.295-1.263 1.561-.232.266-.465.3-.864.1-.4-.2-1.688-.622-3.214-1.982-1.188-1.06-1.99-2.37-2.222-2.77-.232-.4-.025-.616.174-.815.179-.178.4-.465.6-.698.2-.232.266-.4.4-.665.133-.266.067-.5-.033-.698-.1-.2-.896-2.162-1.228-2.96-.323-.776-.65-.671-.896-.683l-.764-.013c-.266 0-.698.1-1.063.5-.365.4-1.396 1.362-1.396 3.323s1.43 3.855 1.63 4.12c.2.266 2.814 4.297 6.817 6.028.953.412 1.697.658 2.277.842.957.305 1.828.262 2.517.159.768-.114 2.356-.964 2.688-1.895.332-.932.332-1.73.232-1.895-.1-.166-.365-.266-.764-.466z"/>
+  </svg>
+</a>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+(function(){
+  /* ── HAMBURGER ── */
+  var ham = document.getElementById('hamburger');
+  var mNav = document.getElementById('mobile-nav');
+  ham.addEventListener('click', function(){
+    var open = mNav.classList.toggle('open');
+    ham.classList.toggle('open', open);
+    ham.setAttribute('aria-expanded', String(open));
+  });
+  mNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mNav.classList.remove('open');
+      ham.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!ham.contains(e.target) && !mNav.contains(e.target)){
+      mNav.classList.remove('open');
+      ham.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* ── FAQ ACCORDION ── */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-question').addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      // open clicked if it wasn't open
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── PORTFOLIO DATA ── */
+  var projects = [
+    {title:"AfriBiz Connect",tag:"Business Platform",desc:"Digital platform connecting African businesses — enabling networking, partnerships, and commerce across the continent.",tech:["React","Netlify"],url:"https://afribiz-connect-website.netlify.app/",img:"images/AfriBiz.png",cat:"corporate business",live:true},
+    {title:"Kasi 360",tag:"Community Platform",desc:"A 360\u00b0 township community and business directory platform — connecting local service providers with residents.",tech:["React","Netlify"],url:"https://kasi360.netlify.app/",img:"images/coding.jpg",cat:"web business",live:true},
+    {title:"JZD Digital Marketing",tag:"Digital Marketing",desc:"Corporate digital marketing agency website — showcasing services, case studies, and lead generation for a growing SA agency.",tech:["React","CSS"],url:"https://jzd-digital-marketing.netlify.app/",img:"images/jzd-logo.jpg",cat:"corporate business",live:true},
+    {title:"Jireh Trading",tag:"Corporate Website",desc:"Professional trading company website — product catalogue, company profile, and contact system for a growing SA trading enterprise.",tech:["React","Netlify"],url:"https://jireh-trading-website.netlify.app/",img:"images/jireh.png",cat:"corporate business",live:true},
+    {title:"Sibanye Auction",tag:"Auction Platform",desc:"Online auction platform for listing, browsing, and bidding on items — built for a South African auctioneer business.",tech:["React","Firebase"],url:"https://sibanye-auction.netlify.app/",img:"images/auction1.jpg",cat:"web business",live:true},
+    {title:"Reaction Unit CRM",tag:"CRM System",desc:"Custom CRM for a security reaction unit — managing client accounts, incident reports, and response team coordination.",tech:["React","Firebase"],url:"https://crm-reactionunit.netlify.app/",img:"images/reaction.png",cat:"business",live:true},
+    {title:"True Seal Rubberising",tag:"Corporate Website",desc:"Corporate website for an industrial rubberising company — services, project gallery, and client contact system.",tech:["React","Netlify"],url:"https://true-seal-rubberising.netlify.app/",img:"images/KZN.png",cat:"corporate business",live:true},
+    {title:"Kuvasha Groener Attorneys",tag:"Legal / Corporate",desc:"Corporate site for a 100% black female-owned law firm — property, wills, contractual & notarial services.",tech:["React","CSS"],url:"https://kgroenerattorneys.co.za/",img:"images/kuvasha.png",cat:"corporate business",live:true},
+    {title:"LeadLink Africa",tag:"Lead Generation",desc:"Connects businesses with verified leads across finance, insurance, legal, real estate, and tech — POPIA-compliant.",tech:["React","Netlify"],url:"https://leadlink-website.netlify.app/",img:"images/LeadLink.png",cat:"corporate business",live:true},
+    {title:"Kasi Digital Connect",tag:"Digital Platform",desc:"Multi-service platform bridging township businesses with the digital economy — retail, bookings, and rentals.",tech:["React","Netlify"],url:"https://kasi-digital-connect.netlify.app/",img:"https://api.microlink.io/?url=https://kasi-digital-connect.netlify.app/&screenshot=true&meta=false&embed=screenshot.url",cat:"web business",live:true},
+    {title:"TUT South Campus GPS",tag:"Web App",desc:"Interactive campus GPS for students, teachers & admin — real-time navigation, location tracking, and admin dashboard.",tech:["React","Firebase","Bootstrap"],url:"https://campus-gps-379423.web.app/",img:"images/gps.jpg",cat:"web",live:true},
+    {title:"Weather & News App",tag:"Web App",desc:"Real-time weather and local news for any location. Search any city and get instant updates.",tech:["React","JavaScript","Firebase"],url:"https://weather-app-f5c30.web.app",img:"images/weather.jpg",cat:"web",live:true},
+    {title:"Hotel Booking App",tag:"Booking System",desc:"Browse and book hotel rooms with date filtering, availability checks, and full admin CRUD operations.",tech:["React","Firebase","Bootstrap"],url:"https://hotel-bookings-app.web.app/",img:"images/hotel.jpg",cat:"web business",live:true},
+    {title:"ZooLand Website",tag:"Web App",desc:"Virtual zoo platform to explore animals worldwide — mammals, birds, reptiles, amphibians, fish with fun facts.",tech:["React","Netlify"],url:"https://zoofari-website.netlify.app/",img:"images/zoo.jpg",cat:"web",live:true},
+    {title:"Nthome Ridez \u2014 Customer App",tag:"Mobile App",desc:"E-hailing customer app — request rides, track drivers in real-time, pay securely, and rate experience.",tech:["React Native","REST API"],url:"",cat:"mobile",live:false,placeholder:"NR"},
+    {title:"Nthome Ridez \u2014 Driver App",tag:"Mobile App",desc:"Driver app for managing ride requests, earnings, and real-time notifications with live map tracking.",tech:["React Native","REST API"],url:"",cat:"mobile",live:false,placeholder:"RD"}
+  ];
+  var VISIBLE=6, showAll=false, curFilter="all";
+  function renderProjects(filter){
+    var grid=document.getElementById('portfolio-grid');
+    if(!grid) return;
+    grid.innerHTML='';
+    var list=projects.filter(function(p){ return filter==='all'||p.cat.indexOf(filter)!==-1; });
+    list.forEach(function(proj,idx){
+      var card=document.createElement('div');
+      card.className='project-card';
+      if(!showAll&&idx>=VISIBLE) card.classList.add('hidden');
+      var thumb=document.createElement('div');
+      thumb.className='project-thumb';
+      if(proj.placeholder){
+        thumb.style.cssText='background:linear-gradient(135deg,#12203A,#1A2E50);display:flex;align-items:center;justify-content:center;';
+        var sp=document.createElement('span');
+        sp.style.cssText='font-family:var(--mono);font-size:2rem;font-weight:700;color:rgba(26,108,245,.18);';
+        sp.textContent=proj.placeholder;
+        thumb.appendChild(sp);
+      } else {
+        var img=document.createElement('img');
+        img.className='project-img';
+        img.src=proj.img; img.alt=proj.title; img.loading='lazy';
+        img.onerror=function(){ img.style.display='none'; thumb.style.background='linear-gradient(135deg,#12203A,#1A2E50)'; };
+        thumb.appendChild(img);
+      }
+      var ov=document.createElement('div'); ov.className='project-overlay';
+      var btn=document.createElement('a');
+      btn.className=proj.live?'project-overlay-btn':'project-overlay-btn no-link';
+      btn.textContent=proj.live?'View Live \u2197':'Mobile App';
+      if(proj.live&&proj.url){ btn.href=proj.url; btn.target='_blank'; btn.rel='noopener'; }
+      ov.appendChild(btn); thumb.appendChild(ov);
+      var body=document.createElement('div'); body.className='project-body';
+      body.innerHTML='<div class="project-tag">'+proj.tag+'</div><div class="project-title">'+proj.title+'</div><p class="project-desc">'+proj.desc+'</p><div class="project-footer"><div class="project-tech">'+proj.tech.map(function(t){return '<span class="tech-chip">'+t+'</span>';}).join('')+'</div><div class="project-live-dot'+(proj.live?'':' offline')+'"></div></div>';
+      card.appendChild(thumb); card.appendChild(body); grid.appendChild(card);
+    });
+    var sb=document.getElementById('show-more-btn');
+    if(sb){
+      sb.style.display=(filter==='all'&&list.length>VISIBLE)?'inline-block':'none';
+      sb.textContent=showAll?'Show Less \u2191':'Show All '+projects.length+' Projects \u2193';
+    }
+  }
+  function toggleProjects(){
+    showAll=!showAll; renderProjects(curFilter);
+    if(!showAll) document.getElementById('portfolio').scrollIntoView({behavior:'smooth'});
+  }
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      curFilter=btn.getAttribute('data-filter');
+      showAll=false; renderProjects(curFilter);
+    });
+  });
+  var sb=document.getElementById('show-more-btn');
+  if(sb) sb.addEventListener('click',toggleProjects);
+  renderProjects('all');
+
+  /* ── BACK TO TOP ── */
+  var btt=document.getElementById('back-to-top');
+  window.addEventListener('scroll',function(){ btt.classList.toggle('visible',window.scrollY>400); },{passive:true});
+})();
+</script>
+</body>
+</html>

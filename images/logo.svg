@@ -1,0 +1,39 @@
+<svg width="100%" viewBox="0 0 530 170" role="img" xmlns="http://www.w3.org/2000/svg" style=""><defs><mask id="imagine-text-gaps-nacm4k" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="530" height="170" fill="white"/><rect x="150" y="41" width="210.171875" height="60" fill="black" rx="2"/><rect x="151" y="101" width="155.265625" height="23" fill="black" rx="2"/></mask></defs>
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">KasiCode</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">KasiCode logo — power plug combined with code brackets, electric blue and orange on dark navy</desc>
+
+  <!-- Background -->
+  <rect width="520" height="160" fill="#0A1428" rx="20" style="fill:rgb(10, 20, 40);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Icon container: rounded square -->
+  <rect x="28" y="28" width="104" height="104" rx="18" fill="#0F1E3D" style="fill:rgb(15, 30, 61);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Code bracket LEFT < -->
+  <polyline points="62,54 44,80 62,106" fill="none" stroke="#1A6CF5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(26, 108, 245);color:rgb(0, 0, 0);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Code bracket RIGHT > -->
+  <polyline points="98,54 116,80 98,106" fill="none" stroke="#1A6CF5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(26, 108, 245);color:rgb(0, 0, 0);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Plug body -->
+  <!-- Two pins -->
+  <line x1="73" y1="48" x2="73" y2="58" stroke="#FF6B2B" stroke-width="4" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(255, 107, 43);color:rgb(0, 0, 0);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="87" y1="48" x2="87" y2="58" stroke="#FF6B2B" stroke-width="4" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(255, 107, 43);color:rgb(0, 0, 0);stroke-width:4px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Plug head -->
+  <rect x="65" y="58" width="30" height="18" rx="4" fill="#FF6B2B" style="fill:rgb(255, 107, 43);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Plug cord body -->
+  <rect x="76" y="76" width="8" height="20" rx="2" fill="#FF6B2B" style="fill:rgb(255, 107, 43);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Plug tip -->
+  <circle cx="80" cy="100" r="4" fill="#FF6B2B" style="fill:rgb(255, 107, 43);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Text block -->
+  <!-- KasiCode -->
+  <text x="154" y="88" font-family="'Trebuchet MS', 'Arial Black', Arial, sans-serif" font-size="48" font-weight="700" dominant-baseline="auto" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Trebuchet MS&quot;, &quot;Arial Black&quot;, Arial, sans-serif;font-size:48px;font-weight:700;text-anchor:start;dominant-baseline:auto">
+    <tspan fill="#FFFFFF" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Trebuchet MS&quot;, &quot;Arial Black&quot;, Arial, sans-serif;font-size:48px;font-weight:700;text-anchor:start;dominant-baseline:auto">Kasi</tspan><tspan fill="#1A6CF5" style="fill:rgb(26, 108, 245);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Trebuchet MS&quot;, &quot;Arial Black&quot;, Arial, sans-serif;font-size:48px;font-weight:700;text-anchor:start;dominant-baseline:auto">Code</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="156" y="118" font-family="'Trebuchet MS', Arial, sans-serif" font-size="16" font-weight="400" fill="#FF6B2B" letter-spacing="0.5" style="fill:rgb(255, 107, 43);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Trebuchet MS&quot;, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Your Kasi Tech Plug</text>
+
+  <!-- Thin accent line between name and tagline -->
+  <line x1="154" y1="97" x2="488" y2="97" stroke="#1A2E55" stroke-width="1" mask="url(#imagine-text-gaps-nacm4k)" style="fill:rgb(0, 0, 0);stroke:rgb(26, 46, 85);color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>

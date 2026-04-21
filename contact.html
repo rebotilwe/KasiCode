@@ -81,44 +81,22 @@
       justify-content: space-between;
       padding: 0 5%;
       height: 68px;
-      background: rgba(6, 11, 24, .9);
+      background: rgba(6, 11, 24, .95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(26, 108, 245, .15)
     }
 
     .nav-logo {
-      font-family: var(--mono);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
+      display: flex;
+      align-items: center;
+      line-height: 0;
       text-decoration: none;
-      letter-spacing: -.5px
     }
 
-    .nav-logo span {
-      color: var(--blue)
-    }
-
-    .nav-logo .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.1em;
-      background: var(--orange);
-      margin-left: 2px;
-      vertical-align: middle;
-      animation: blink 1s step-end infinite
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: 0
-      }
+    .nav-logo img {
+      max-height: 48px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -158,21 +136,100 @@
       background: var(--blue-light)
     }
 
+    /* Hamburger Menu */
     .hamburger {
       display: none;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 5px;
       cursor: pointer;
       background: none;
       border: none;
-      padding: 4px
+      padding: 8px;
+      width: 44px;
+      height: 44px;
+      z-index: 101;
     }
 
     .hamburger span {
       display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--gray-2)
+      width: 24px;
+      height: 2px;
+      background: var(--gray-2);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: rgba(6, 11, 24, .98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(26, 108, 245, .15);
+      z-index: 99;
+      padding: 1.5rem 5%;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      color: var(--gray-2);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: color 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--white);
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav .btn-nav-mobile {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--blue);
+      color: var(--white);
+      padding: 12px 24px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-nav .btn-nav-mobile:hover {
+      background: var(--blue-light);
     }
 
     /* BG */
@@ -710,8 +767,8 @@
       background: rgba(10, 102, 194, .1)
     }
 
-    .social-icon.ig {
-      background: rgba(228, 64, 95, .1)
+    .social-icon.fb {
+      background: rgba(24, 119, 242, .1)
     }
 
     .social-name {
@@ -747,15 +804,14 @@
     }
 
     .footer-logo {
-      font-family: var(--mono);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
-    .footer-logo span {
-      color: var(--blue)
+    .footer-logo img {
+      max-height: 36px;
+      width: auto;
     }
 
     .footer-links {
@@ -835,11 +891,11 @@
       }
 
       .nav-links {
-        display: none
+        display: none !important;
       }
 
       .hamburger {
-        display: flex
+        display: flex !important;
       }
     }
 
@@ -871,7 +927,9 @@
   <div class="grid-lines"></div>
 
   <nav>
-    <a href="index.html" class="nav-logo"><span>Kasi</span>Code<span class="cursor"></span></a>
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.svg" alt="KasiCode Logo" style="height: 48px; width: auto; display: block;">
+    </a>
     <ul class="nav-links">
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#portfolio">Portfolio</a></li>
@@ -880,12 +938,23 @@
       <li><a href="index.html#team">Team</a></li>
       <li><a href="index.html#pricing">Pricing</a></li>
     </ul>
-    <a href="contact.html" class="btn-nav">Contact Us</a>
-    <button class="hamburger" onclick="this.parentNode.querySelector('.nav-links').style.display='flex'"
-      aria-label="Menu">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#clients">Clients</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="contact.html" class="btn-nav-mobile">Contact Us</a>
+  </div>
 
   <div class="page">
 
@@ -926,13 +995,6 @@
           Something went wrong. Please try again or email us directly at <strong>rebotilwemokiba@gmail.com</strong>
         </div>
 
-        <!--
-        FORMSPREE SETUP — 3 steps:
-        1. Sign up free at https://formspree.io
-        2. Create a new form, copy the form ID  (e.g. xpwzkyab)
-        3. Replace YOUR_FORMSPREE_ID below:
-             action="https://formspree.io/f/xpwzkyab"
-      -->
         <form id="contact-form" class="contact-form" action="https://formspree.io/f/mblzraro" method="POST" novalidate>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="_subject" value="New Enquiry from KasiCode Website">
@@ -1010,7 +1072,7 @@
           <div class="contact-cards">
             <a href="tel:0635773160" class="contact-card">
               <div class="cc-bar"></div>
-              <div class="cc-icon">&#128222;</div>
+              <div class="cc-icon">📞</div>
               <div>
                 <div class="cc-type">Phone / WhatsApp</div>
                 <div class="cc-value">063 577 3160</div>
@@ -1018,7 +1080,7 @@
             </a>
             <a href="mailto:rebotilwemokiba@gmail.com" class="contact-card">
               <div class="cc-bar"></div>
-              <div class="cc-icon">&#9993;</div>
+              <div class="cc-icon">✉️</div>
               <div>
                 <div class="cc-type">Email</div>
                 <div class="cc-value">rebotilwemokiba@gmail.com</div>
@@ -1026,7 +1088,7 @@
             </a>
             <div class="contact-card">
               <div class="cc-bar"></div>
-              <div class="cc-icon">&#128205;</div>
+              <div class="cc-icon">📍</div>
               <div>
                 <div class="cc-type">Location</div>
                 <div class="cc-value">5787 uMzinto Rd, Langaville, Ekurhuleni</div>
@@ -1053,29 +1115,28 @@
           <div class="info-label">Find Us Online</div>
           <div class="social-links">
             <a href="https://wa.me/27635773160" target="_blank" rel="noopener" class="social-link">
-              <div class="social-icon wa">&#128172;</div>
+              <div class="social-icon wa">💬</div>
               <div>
                 <div class="social-name">WhatsApp</div>
                 <div class="social-handle">Chat with us instantly</div>
               </div>
-              <span class="social-arrow">&#8599;</span>
+              <span class="social-arrow">↗</span>
             </a>
-            <a href="https://www.linkedin.com/in/rebotilwe
-mokiba-92b791287 " target="_blank" rel="noopener" class="social-link">
-              <div class="social-icon li">&#128188;</div>
+            <a href="https://www.linkedin.com/in/rebotilwe-mokiba" target="_blank" rel="noopener" class="social-link">
+              <div class="social-icon li">🔗</div>
               <div>
                 <div class="social-name">LinkedIn</div>
                 <div class="social-handle">KasiCode Solutions</div>
               </div>
-              <span class="social-arrow">&#8599;</span>
+              <span class="social-arrow">↗</span>
             </a>
             <a href="https://www.facebook.com/rebotilwe.bobo.1/" target="_blank" rel="noopener" class="social-link">
-              <div class="social-icon fb">&#xf09a;</div>
+              <div class="social-icon fb">📘</div>
               <div>
                 <div class="social-name">Facebook</div>
                 <div class="social-handle">@kasicode</div>
               </div>
-              <span class="social-arrow">&#8599;</span>
+              <span class="social-arrow">↗</span>
             </a>
           </div>
         </div>
@@ -1085,7 +1146,9 @@ mokiba-92b791287 " target="_blank" rel="noopener" class="social-link">
   </div>
 
   <footer>
-    <a href="index.html" class="footer-logo"><span>Kasi</span>Code</a>
+    <a href="index.html" class="footer-logo">
+      <img src="images/logo.svg" alt="KasiCode Logo" style="height: 36px; width: auto;">
+    </a>
     <ul class="footer-links">
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#portfolio">Portfolio</a></li>
@@ -1097,6 +1160,46 @@ mokiba-92b791287 " target="_blank" rel="noopener" class="social-link">
 
   <script>
     (function () {
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      function toggleMenu() {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!hamburger.contains(e.target) && !mobileNav.contains(e.target) && mobileNav.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+
+      // Close menu on window resize (if screen becomes desktop)
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1000 && mobileNav.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+
+      // Form validation and submission
       var form = document.getElementById('contact-form');
       var submitBtn = document.getElementById('submit-btn');
       var successEl = document.getElementById('success-banner');

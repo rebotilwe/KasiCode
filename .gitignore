@@ -1,8 +1,31 @@
-images/
-*.jpg
-*.png
-*.svg
-*.jpeg
-*.gif
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build files (if any)
+dist/
+build/
+
+# Font files (optional - keep if you want to ignore)
 *.ttf
 *.eot
+*.woff
+*.woff2
+
+# Images are NEEDED for the website - DO NOT IGNORE
+# images/          ← REMOVED
+# *.jpg            ← REMOVED
+# *.png            ← REMOVED
+# *.svg            ← REMOVED
+# *.jpeg           ← REMOVED
+# *.gif            ← REMOVED
